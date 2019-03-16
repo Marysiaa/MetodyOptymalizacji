@@ -241,10 +241,10 @@ ostream &operator<<(ostream &S, const matrix &A)
 	for (int i = 0; ; ++i)
 	{
 		for (int j = 0; j < A.m; ++j)
-			S << A.M[i][j] << "; ";
+			S << A.M[i][j] << ",";
 		if (i == A.n - 1)
 			return S;
-		S << endl;
+		S;// << ","; // endl;
 	}
 }
 

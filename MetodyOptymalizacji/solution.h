@@ -18,7 +18,7 @@ public:
 	static int H_calls;
 	solution(double = NAN);
 	solution(double *, int);
-	void fit_fun();
+	void fit_fun(matrix = 0.0, bool = false);
 	void grad();
 	void hess();
 };

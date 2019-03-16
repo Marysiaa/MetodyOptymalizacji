@@ -40,13 +40,30 @@ matrix diff(double t, matrix &Y, matrix &C)
 	// rownanie rozniczowe
 	// Y - aktualny stan
 	// C - parametr który optymalizujemy
+
+	// lab_2
+
+	/*
 	matrix dY(Y);
-
-	double PA = 1, PB = 1, a = 0.98, b = 0.63, g = 9.81, Tin = 10, Fin = 0.01, DA = 0.005, DB = 0.00365665, TA = 90;
-
-	dY(0) = -(Y(0) > 0 ? a*b*DA*pow(2 * g*Y(0) / PA, 0.5) : 0);
+	double PA = 1, PB = 1, a = 0.98, b = 0.63, g = 9.81, Tin = 10, Fin = 0.01, DB = 0.00365665, TA = 90;
+	dY(0) = -(Y(0) > 0 ? a*b*C(0)*pow(2 * g*Y(0) / PA, 0.5) : 0);
 	dY(1) = Fin - dY(0) - (Y(1) > 0 ? a*b*DB*pow(2 * g*Y(1) / PB, 0.5) : 0);
 	dY(2) = Fin / Y(1) * (Tin - Y(2)) - dY(0) / Y(1) * (TA - Y(2));
+	*/
+
+	// lab_3
+
+	/*
+	double mr = 1, mc = 10, l = 0.5, b = 0.5, a_ref = 3.14, o_ref = 0;
+	double I = mr*l*l / 3 + mc*l*l;
+	matrix dY(2, 1);
+	dY(0) = Y(1);
+	dY(1) = (C(0)*(a_ref - Y(0)) + C(1)*(o_ref - Y(1)) - b*Y(1)) / I;
+	*/
+
+
+	matrix dY;
+
 
 	return dY;
 }
